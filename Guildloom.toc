@@ -1,0 +1,13 @@
+## Interface: 16001
+## Title: |cff4fc3f7Guild|rloom
+## Notes: Weaves your guild together: ranks, professions, recipe search, crafting requests, officer activity tools and alt linking.
+## Version: 1.3.0
+## OptionalDeps: LibSharedMedia-3.0, SharedMedia
+## SavedVariables: GuildloomDB, GuildPlusDB
+## IconTexture: Interface\Icons\INV_Shirt_GuildTabard_01
+
+Core.lua
+Recipes.lua
+Requests.lua
+Alts.lua
+UI.lua
