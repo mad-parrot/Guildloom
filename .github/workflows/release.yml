@@ -1,0 +1,31 @@
+# Builds Guildloom-<version>.zip and publishes it as a GitHub release
+# whenever you push a tag like v1.1.0.
+#
+# Optional: to also upload to CurseForge / Wago, add the project IDs to
+# Guildloom.toc (## X-Curse-Project-ID / ## X-Wago-ID) and the API keys as
+# repository secrets (CF_API_KEY / WAGO_API_TOKEN).
+name: Package and release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Package and publish
+        uses: BigWigsMods/packager@v2
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}

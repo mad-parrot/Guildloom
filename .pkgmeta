@@ -1,0 +1,11 @@
+# Used by the BigWigs packager (.github/workflows/release.yml)
+package-as: Guildloom
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+ignore:
+  - .github
+  - .gitignore
+  - .pkgmeta
